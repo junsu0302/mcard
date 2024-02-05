@@ -1,26 +1,59 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import HomePage from '@pages/home'
+import TestPage from '@pages/test'
+import CardPage from '@pages/Card'
+import SigninPage from '@pages/Signin'
+import SignupPage from '@pages/Signup'
+import ApplyPage from '@pages/Apply'
+import ApplyDone from '@pages/ApplyDone'
+import ScrollToTop from '@shared/ScrollToTop'
+import Navbar from '@components/shared/Navbar'
+
+import PrivateRoute from '@components/auth/PrivateRoute'
+import { Suspense } from 'react'
+import MyPage from '@pages/my'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <ScrollToTop />
+      <Navbar />
+      <Routes>
+        <Route path="/" Component={HomePage} />
+        <Route path="/signin" Component={SigninPage} />
+        <Route path="/signup" Component={SignupPage} />
+        <Route path="/card/:id" Component={CardPage} />
+        <Route
+          path="/apply/:id"
+          element={
+            <PrivateRoute>
+              <Suspense fallback={<></>}>
+                <ApplyPage />
+              </Suspense>
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/apply/done"
+          element={
+            <PrivateRoute>
+              <ApplyDone />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/my"
+          element={
+            <PrivateRoute>
+              <MyPage />
+            </PrivateRoute>
+          }
+        />
+        <Route path="/test" Component={TestPage} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
