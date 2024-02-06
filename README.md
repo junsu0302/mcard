@@ -1,47 +1,91 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-# mcard
+📦src
+ ┣ 📂atoms
+ ┃ ┗ 📜user.ts
+ ┣ 📂components
+ ┃ ┣ 📂apply
+ ┃ ┃ ┣ 📂hooks
+ ┃ ┃ ┃ ┣ 📜useAppliedCard.ts
+ ┃ ┃ ┃ ┣ 📜useApplyCardMutation.ts
+ ┃ ┃ ┃ ┗ 📜usePollApplyStatus.ts
+ ┃ ┃ ┣ 📜Basicinfo.tsx
+ ┃ ┃ ┣ 📜Cardinfo.tsx
+ ┃ ┃ ┣ 📜Terms.tsx
+ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┣ 📂auth
+ ┃ ┃ ┣ 📜AuthGuard.tsx
+ ┃ ┃ ┗ 📜PrivateRoute.tsx
+ ┃ ┣ 📂home
+ ┃ ┃ ┣ 📜AdBanners.tsx
+ ┃ ┃ ┗ 📜CardList.tsx
+ ┃ ┣ 📂my
+ ┃ ┃ ┗ 📜Myimage.tsx
+ ┃ ┣ 📂shared
+ ┃ ┃ ┣ 📜Agreement.tsx
+ ┃ ┃ ┣ 📜Alert.tsx
+ ┃ ┃ ┣ 📜Badge.tsx
+ ┃ ┃ ┣ 📜Button.tsx
+ ┃ ┃ ┣ 📜Dimmed.tsx
+ ┃ ┃ ┣ 📜FixedBottomButton.tsx
+ ┃ ┃ ┣ 📜Flex.tsx
+ ┃ ┃ ┣ 📜FullPageLoader.tsx
+ ┃ ┃ ┣ 📜ListRow.tsx
+ ┃ ┃ ┣ 📜Navbar.tsx
+ ┃ ┃ ┣ 📜ProgressBar.tsx
+ ┃ ┃ ┣ 📜ScrollToTop.tsx
+ ┃ ┃ ┣ 📜Select.tsx
+ ┃ ┃ ┣ 📜Skeleton.tsx
+ ┃ ┃ ┣ 📜Spacing.tsx
+ ┃ ┃ ┣ 📜Text.tsx
+ ┃ ┃ ┣ 📜TextField.tsx
+ ┃ ┃ ┣ 📜Top.tsx
+ ┃ ┃ ┗ 📜input.tsx
+ ┃ ┣ 📂signin
+ ┃ ┃ ┗ 📜Form.tsx
+ ┃ ┣ 📂signup
+ ┃ ┃ ┗ 📜Form.tsx
+ ┃ ┗ 📂test
+ ┃ ┃ ┣ 📜AdBannerListAddButton copy.tsx
+ ┃ ┃ ┗ 📜CardListAddButton.tsx
+ ┣ 📂constants
+ ┃ ┣ 📜apply.ts
+ ┃ ┗ 📜index.ts
+ ┣ 📂contexts
+ ┃ ┗ 📜AlertContext.tsx
+ ┣ 📂hooks
+ ┃ ┗ 📂auth
+ ┃ ┃ ┗ 📜useUser.ts
+ ┣ 📂mock
+ ┃ ┗ 📜data.js
+ ┣ 📂models
+ ┃ ┣ 📜apply.ts
+ ┃ ┣ 📜card.ts
+ ┃ ┣ 📜signin.ts
+ ┃ ┣ 📜signup.ts
+ ┃ ┗ 📜user.ts
+ ┣ 📂pages
+ ┃ ┣ 📜Apply.tsx
+ ┃ ┣ 📜ApplyDone.tsx
+ ┃ ┣ 📜Card.tsx
+ ┃ ┣ 📜Signin.tsx
+ ┃ ┣ 📜Signup.tsx
+ ┃ ┣ 📜home.tsx
+ ┃ ┣ 📜my.tsx
+ ┃ ┗ 📜test.tsx
+ ┣ 📂remote
+ ┃ ┣ 📜adBanner.ts
+ ┃ ┣ 📜apply.ts
+ ┃ ┣ 📜card.ts
+ ┃ ┗ 📜firebase.ts
+ ┣ 📂styles
+ ┃ ┣ 📜button.ts
+ ┃ ┣ 📜colorPalette.ts
+ ┃ ┣ 📜globalStyles.ts
+ ┃ ┗ 📜typography.ts
+ ┣ 📜App.test.tsx
+ ┣ 📜App.tsx
+ ┣ 📜index.css
+ ┣ 📜index.tsx
+ ┣ 📜logo.svg
+ ┣ 📜react-app-env.d.ts
+ ┣ 📜reportWebVitals.ts
+ ┗ 📜setupTests.ts
